@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 
 import com.dynamicdevs.phonesellerapp.model.data.Phone;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +61,6 @@ public class PhoneDBHelper extends SQLiteOpenHelper {
         String getQuery = "SELECT * FROM " + TABLE_NAME;
         Cursor cursor = getReadableDatabase().rawQuery(getQuery, null);
         cursor.move(-1);
-
         while (cursor.moveToNext()){
             Phone phone = new Phone(cursor.getInt(cursor.getColumnIndex(COLUMN_PHONE_ID)),
                     cursor.getDouble(cursor.getColumnIndex(COLUMN_PRICE)),

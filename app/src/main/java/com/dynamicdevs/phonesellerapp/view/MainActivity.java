@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.dynamicdevs.phonesellerapp.R;
 import com.dynamicdevs.phonesellerapp.databinding.ActivityMainBinding;
 import com.dynamicdevs.phonesellerapp.model.data.Phone;
 import com.dynamicdevs.phonesellerapp.presenter.PhonePresenter;

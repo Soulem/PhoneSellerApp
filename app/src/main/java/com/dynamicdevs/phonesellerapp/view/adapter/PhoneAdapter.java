@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import com.dynamicdevs.phonesellerapp.databinding.PhoneItemLayoutBinding;
 import com.dynamicdevs.phonesellerapp.model.data.Phone;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,10 +38,12 @@ public class PhoneAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup){
         binding = PhoneItemLayoutBinding.inflate(LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
 
+        DecimalFormat df = new DecimalFormat("#.00");
+
         Phone phone = phoneList.get(i);
         binding.makerTextview.setText(phone.getMaker());
         binding.modelTextview.setText(phone.getModel());
-        binding.priceTextview.setText(String.valueOf(phone.getPrice()));
+        binding.priceTextview.setText(df.format(phone.getPrice()));
 
         binding.getRoot().setOnClickListener(v -> {
             phoneDelegate.selectPhone(phone);

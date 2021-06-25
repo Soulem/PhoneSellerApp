@@ -6,12 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.dynamicdevs.phonesellerapp.R;
 import com.dynamicdevs.phonesellerapp.databinding.ActivityPhoneDescriptionBinding;
 import com.dynamicdevs.phonesellerapp.model.data.Phone;
 import com.dynamicdevs.phonesellerapp.presenter.PhonePresenter;
 import com.dynamicdevs.phonesellerapp.presenter.PresenterContract;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import static com.dynamicdevs.phonesellerapp.util.Constants.PHONE_DATA_KEY;
@@ -27,9 +27,10 @@ public class PhoneDescriptionActivity extends AppCompatActivity implements Prese
 
         Phone phone = getIntent().getParcelableExtra(PHONE_DATA_KEY);
         if (null != phone){
+            DecimalFormat df = new DecimalFormat("#.00");
             binding.makerTextview.setText(phone.getMaker());
             binding.modelTextview.setText(phone.getModel());
-            binding.priceTextview.setText(String.valueOf(phone.getPrice()));
+            binding.priceTextview.setText(df.format(phone.getPrice()));
         }
 
         binding.previousButton.setOnClickListener(view ->{

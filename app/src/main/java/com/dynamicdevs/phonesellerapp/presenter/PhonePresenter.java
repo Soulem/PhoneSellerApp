@@ -1,7 +1,5 @@
 package com.dynamicdevs.phonesellerapp.presenter;
 
-import android.content.Context;
-
 import com.dynamicdevs.phonesellerapp.model.data.Phone;
 import com.dynamicdevs.phonesellerapp.model.database.PhoneDBHelper;
 
