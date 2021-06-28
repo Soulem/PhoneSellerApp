@@ -73,7 +73,7 @@ public class PhoneDBHelper extends SQLiteOpenHelper {
     }
 
     public void deletePhone(Phone phone){
-        String deleteQuery = "DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_PHONE_ID + " = " + phone.getID();
+        String deleteQuery = "DELETE * FROM " + TABLE_NAME + " WHERE " + COLUMN_PHONE_ID + " = " + phone.getID();
         getWritableDatabase().execSQL(deleteQuery);
     }
 }

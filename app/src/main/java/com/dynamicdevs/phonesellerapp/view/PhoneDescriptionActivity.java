@@ -26,6 +26,7 @@ public class PhoneDescriptionActivity extends AppCompatActivity implements Prese
         setContentView(binding.getRoot());
 
         Phone phone = getIntent().getParcelableExtra(PHONE_DATA_KEY);
+
         if (null != phone){
             DecimalFormat df = new DecimalFormat("#.00");
             binding.makerTextview.setText(phone.getMaker());
